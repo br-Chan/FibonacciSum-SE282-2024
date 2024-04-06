@@ -4,7 +4,7 @@ import java.lang.Math;
 // UPI: bcha389
 // UoA Student ID: 501744077
 
-public class main {
+public class Main_temp {
     // Initialise the golden ratio and the golden ratio with a numerator of 1-sqrt(5).
     final static double goldenRatio1 = (1 + Math.sqrt(5)) / 2;
     final static double goldenRatio2 = (1 - Math.sqrt(5)) / 2;
