@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.Scanner;
 
 // Author: Brandon Seng Han Chan
 // UPI: bcha389
@@ -92,7 +93,7 @@ public class Main {
             "PROMPT: Find the GCD of the sums of the first " + A + " and " + B + " Fibonacci numbers."
         );
 
-        System.out.println("============ STEP 1: Calculate the sums ===========");
+        System.out.println("=========================== STEP 1: Calculate the sums ==========================");
 
         // Calculate the sums of the first A and B Fibonacci numbers (-1 because sequence starts at n = 0).
         int fA = fSum(A - 1);
@@ -100,29 +101,61 @@ public class Main {
         int fB = fSum(B - 1);
         System.out.println("Sum of the first " + B + " Fibonacci numbers = " + fB);
 
-        System.out.println("============ Step 2: Calculate the GCD ============");
+        System.out.println("=========================== Step 2: Calculate the GCD ===========================");
 
         int result = gcd(fA, fB);
-        System.out.println("===================== ANSWER ======================");
+        System.out.println("==================================== ANSWER =====================================");
         System.out.println(result);
         System.out.println();
         return result;
     }
 
     //This method tests the above program.
-    public static void testProgram(int A, int B) {
-        System.out.println("Inputs: " + A + " and " + B);
-        System.out.println("Result: " + gcdFibonacci(A, B));
-        System.out.println();
+    public static void testProgram() {
+        System.out.println("Running the algorithm on 5 pre-defined pairs of inputs...\n");
+        gcdFibonacci(4, 3);
+        gcdFibonacci(30, 20);
+        gcdFibonacci(3, 2);
+        gcdFibonacci(7, 7);
+        gcdFibonacci(42, 44);
+        System.out.println("Algorithm has been run on 5 pairs of inputs.\n");
+
+    }
+
+    public static void menu() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Input 'TEST' to run a testProgram method with predefined inputs.");
+        System.out.println("Input 'USER' to enter your own inputs.");
+        System.out.println("Input 'EXIT' to exit.");
+        String input = scanner.nextLine();
+
+        if (input.toUpperCase().equals("TEST")) {
+            testProgram();
+
+        } else if (input.toUpperCase().equals("USER")) {
+            System.out.print("Input A = ");
+            int A = scanner.nextInt();
+            System.out.print("Input B = ");
+            int B = scanner.nextInt();
+            
+            System.out.println("");
+            gcdFibonacci(A, B);
+
+        } else if (input.toUpperCase().equals("EXIT")) {
+            System.out.println("Exiting...");
+            return;
+        
+        } else {
+            System.out.println("Invalid input.");
+
+        }
+
+        menu();
     }
 
     public static void main(String[] args) {
-        gcdFibonacci(30, 20);
+        menu();
 
-        // for (int n = 0; n < 50; ++n) {
-        //     System.out.println(n + ": " + fSum(n));
-        // }
-
-        //testProgram(4, 3);
     }
 }
