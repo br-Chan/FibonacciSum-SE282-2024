@@ -22,7 +22,7 @@ a_(n+1) = a_(n+1) + a_n
 
 Referring to pages 43 to 45 in Course book II (Discrete Structures in Mathematics and Computer Science), a solution to recurrence relations of this type can be found of the form a_n = r^n. The following working details this solution:
 
-[image 1 goes here]
+![Image_1](Image_1.jpg)
 
 This solution of the Fibonacci sequence can thus be used for all integers n >= 0.
 
@@ -34,7 +34,7 @@ In the above image, the first 10 Fibonacci numbers and the sums at each integer 
 
 The following working proves the relationship, in which the sum of Fibonacci numbers from 0 to n can be calculated where like terms cancel out to result in only two remaining terms.
 
-[image 2 goes here]
+![Image_2](Image_2.jpg)
 
 So the sum of the first n Fibonacci numbers is equal to the (n+2)th Fibonacci number minus 1.
 
