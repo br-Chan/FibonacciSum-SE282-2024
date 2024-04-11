@@ -68,6 +68,7 @@ A test method has been implemented with 4 pre-defined inputs, and more test case
 
 Running the algorithm on 4 pre-defined pairs of inputs...
 
+```
 4 & 3 => 2
 PROMPT: Find the GCD of the sums of the first 4 and 3 Fibonacci numbers.
 =========================== STEP 1: Calculate the sums ==========================
@@ -120,6 +121,7 @@ GCD(20, 20) = ? (using Euclidean Algorithm)
 20 equals 20, so return 20.
 ==================================== ANSWER =====================================
 20
+```
 
 -- end of output --
 
