@@ -66,9 +66,9 @@ When r = 0, return b.
 
 A test method has been implemented with 4 pre-defined inputs, and more test cases can be added to further test it. This is the output from that method:
 
+```
 Running the algorithm on 4 pre-defined pairs of inputs...
 
-```
 4 & 3 => 2
 PROMPT: Find the GCD of the sums of the first 4 and 3 Fibonacci numbers.
 =========================== STEP 1: Calculate the sums ==========================
