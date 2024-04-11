@@ -31,7 +31,7 @@ a_n = a_(n-1) + a_(n-2)
 
 which can also be written as
 
-a_(n+1) = a_(n+1) + a_n
+a_(n+2) = a_(n+1) + a_n
 
 Referring to pages 43 to 45 in Course book II (Discrete Structures in Mathematics and Computer Science), a solution to recurrence relations of this type can be found of the form a_n = r^n. The following working details this solution:
 
@@ -39,7 +39,7 @@ Referring to pages 43 to 45 in Course book II (Discrete Structures in Mathematic
 
 This solution of the Fibonacci sequence can thus be used for all integers n >= 0.
 
-The method implementing this formula was made to return an integer; this decision means that it will only work between n = 0 and n = 46. Any higher input integer and the maximum value for integers (2147483647) is reached and the method does not work.
+The method implementing this formula was made to return an integer; this decision means that it will only work between n = 0 and n = 46. Any higher input integer and the maximum value for integers (2147483647) is reached and the method does not return the correct result.
 
 ## Calculating the sum of the first n Fibonacci numbers
 
@@ -51,7 +51,7 @@ The following working proves the relationship, in which the sum of Fibonacci num
 
 So the sum of the first n Fibonacci numbers is equal to the (n+2)th Fibonacci number minus 1.
 
-The method implementing this formula also returns an integer, and so will only work between n = 0 and n = 44. This is because the method uses the fibonacci method to find the (n+2)th fibonacci number. Since (n+2) will not give the correct answer when more than 46, this method will not work when n is more than 44.
+The method implementing this formula also returns an integer, and so will only work between n = 0 and n = 44. This is because the method uses the implemented fibonacci method to find the (n+2)th fibonacci number. Since (n+2) will not give the correct answer when more than 46, this method will not work when n is more than 44.
 
 ## Calculating the GCD of two numbers
 
@@ -129,4 +129,4 @@ GCD(20, 20) = ? (using Euclidean Algorithm)
 
 -- end of output --
 
-Each test case matches the pre-calculated values. Not that the 2nd test case (20 & 30) was not manually calculated, and this test case is instead testing the program has used the algorithm correctly.
+Each test case matches the pre-calculated values. Not that the 2nd test case (20 & 30) was not manually calculated and was found using the explicit formulae, and this test case is instead testing the program has used the algorithm correctly.
