@@ -6,13 +6,18 @@ UoA Student ID: 501744077
 
 This Java program calculates the greatest common divisor of the sum of the first A Fibonacci numbers and the sum of the first B Fibonacci numbers. This is done by first calculating the sums, and then using the Euclidean Algorithm to compute the GCD.
 
-## To compile and run
-
-
-
 The following constraints must be adhered to:
 - Should not rely on precomputed Fibonacci numbers
 - Should not brute-force compute the Fibonacci series up to the desired number (cannot explictly generate the entire series)
+
+## To compile and run
+
+In the terminal, enter the following to compile the java code and create the jar file:
+    javac Main.java
+    jar cvfe FibonacciSumGCD.jar Main *.class
+
+This has already been done with the current Main.java code. To run the jar, double-click in the file manager. If that does not work, it can be run from the terminal with:
+    java -jar FibonacciSumGCD.jar
 
 ## Calculating the nth Fibonacci number
 
