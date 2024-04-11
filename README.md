@@ -62,3 +62,65 @@ If r does not equal 0, let a = b and b = r, and repeat the process.
 
 When r = 0, return b.
 
+## Test/sample output
+
+A test method has been implemented with 4 pre-defined inputs, and more test cases can be added to further test it. This is the output from that method:
+
+Running the algorithm on 4 pre-defined pairs of inputs...
+
+4 & 3 => 2
+PROMPT: Find the GCD of the sums of the first 4 and 3 Fibonacci numbers.
+=========================== STEP 1: Calculate the sums ==========================
+Sum of the first 4 Fibonacci numbers = 4
+Sum of the first 3 Fibonacci numbers = 2
+=========================== Step 2: Calculate the GCD ===========================
+GCD(4, 2) = ? (using Euclidean Algorithm)
+We use a = qb + r.
+a = 4, b = 2 -> r = 0
+So return 2.
+==================================== ANSWER =====================================
+2
+
+30 & 20 => 11
+PROMPT: Find the GCD of the sums of the first 30 and 20 Fibonacci numbers.
+=========================== STEP 1: Calculate the sums ==========================
+Sum of the first 30 Fibonacci numbers = 1346268
+Sum of the first 20 Fibonacci numbers = 10945
+=========================== Step 2: Calculate the GCD ===========================
+GCD(1346268, 10945) = ? (using Euclidean Algorithm)
+We use a = qb + r.
+a = 1346268, b = 10945 -> r = 33
+a = 10945, b = 33 -> r = 22
+a = 33, b = 22 -> r = 11
+a = 22, b = 11 -> r = 0
+So return 11.
+==================================== ANSWER =====================================
+11
+
+2 & 3 => 1
+PROMPT: Find the GCD of the sums of the first 2 and 3 Fibonacci numbers.
+=========================== STEP 1: Calculate the sums ==========================
+Sum of the first 2 Fibonacci numbers = 1
+Sum of the first 3 Fibonacci numbers = 2
+=========================== Step 2: Calculate the GCD ===========================
+GCD(1, 2) = ? (using Euclidean Algorithm)
+We use a = qb + r.
+a = 2, b = 1 -> r = 0
+So return 1.
+==================================== ANSWER =====================================
+1
+
+7 & 7 => 20
+PROMPT: Find the GCD of the sums of the first 7 and 7 Fibonacci numbers.
+=========================== STEP 1: Calculate the sums ==========================
+Sum of the first 7 Fibonacci numbers = 20
+Sum of the first 7 Fibonacci numbers = 20
+=========================== Step 2: Calculate the GCD ===========================
+GCD(20, 20) = ? (using Euclidean Algorithm)
+20 equals 20, so return 20.
+==================================== ANSWER =====================================
+20
+
+-- end of output --
+
+Each test case matches the pre-calculated values. Not that the 2nd test case (20 & 30) was not manually calculated, and this test case is instead testing the program has used the algorithm correctly.
