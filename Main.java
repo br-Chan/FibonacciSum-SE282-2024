@@ -11,26 +11,24 @@ public class Main {
     final static double goldenRatio2 = (1 - Math.sqrt(5)) / 2;
 
 
-    // This method calculates the nth Fibonacci number,
-    // with initial conditions F(0) = 0 and F(1) = 1.
+    // This method calculates the nth Fibonacci number.
     // This method uses the explicit formula for the Fibonacci sequence,
     // explained in README.md and attached working.
     public static int fibonacci(int n) {
-        // Start with only 1 / sqrt(5).
+        // Initialise a variable equal to only 1 / sqrt(5).
         double result = 1 / Math.sqrt(5);
 
         // Take goldenRatio1 and 2 to the nth power.
         double golden1 = Math.pow(goldenRatio1, n);
         double golden2 = Math.pow(goldenRatio2, n);
 
-        // Multiply the difference by 1 / sqrt(5).
+        // Multiply their difference by 1 / sqrt(5).
         result = result * (golden1 - golden2);
 
         return (int)result;
 
-        // READ: this method only works with 0 <= n <= 46.
+        // READ: this method returns integers and only works with 0 <= n <= 46.
         // When n > 46, the maximum value for integers (2147483647) is reached.
-        // For values larger than 46, a method returning a double should be used instead.
     }
 
     // This method returns the sum of Fibonacci numbers from 0 to n.
@@ -39,7 +37,7 @@ public class Main {
 
         return result;
 
-        // READ: this method only works with 0 <= n <= 44,
+        // READ: this method returns integers and only works with 0 <= n <= 44,
         // for the same reasons as above.
     }
 
@@ -54,7 +52,7 @@ public class Main {
             return n;
         }
 
-        // Determine which of m and n is bigger, and ensure that a > b.
+        // Determine which of m and n is bigger, and equate them to a and b such that a > b.
         System.out.println("We use a = qb + r.");
         int a = 0, b = 0;
         if (m > n) {
@@ -105,23 +103,36 @@ public class Main {
 
         int result = gcd(fA, fB);
         System.out.println("==================================== ANSWER =====================================");
-        System.out.println(result);
-        System.out.println();
+        System.out.println(result + "\n");
         return result;
     }
 
-    //This method tests the above program.
+    // This method tests the above program with 4 pre-defined pairs of inputs.
     public static void testProgram() {
-        System.out.println("Running the algorithm on 5 pre-defined pairs of inputs...\n");
-        gcdFibonacci(4, 3);
-        gcdFibonacci(30, 20);
-        gcdFibonacci(3, 2);
-        gcdFibonacci(7, 7);
-        gcdFibonacci(42, 44);
-        System.out.println("Algorithm has been run on 5 pairs of inputs.\n");
+        boolean allPass = true;
+
+        System.out.println("Running the algorithm on 4 pre-defined pairs of inputs...\n");
+
+        System.out.println("4 & 3 => 2");
+        if (gcdFibonacci(4, 3) != 2) allPass = false;
+
+        System.out.println("30 & 20 => 11");
+        if (gcdFibonacci(30, 20) != 11) allPass = false;
+
+        System.out.println("2 & 3 => 1");
+        if (gcdFibonacci(2, 3) != 1) allPass = false;
+
+        System.out.println("7 & 7 => 20");
+        if (gcdFibonacci(7, 7) != 20) allPass = false;
+        
+        System.out.print("Algorithm has been run on 4 pairs of inputs.");
+        if (allPass) System.out.println("All pass!");
+        else System.out.println("Not all pass.");
+        System.out.println();
 
     }
 
+    // This method implements the user interface that the user interacts with.
     public static void menu() {
         Scanner scanner = new Scanner(System.in);
 
@@ -134,10 +145,20 @@ public class Main {
             testProgram();
 
         } else if (input.toUpperCase().equals("USER")) {
+            // Prompt user for inputs.
             System.out.print("Input A = ");
             int A = scanner.nextInt();
             System.out.print("Input B = ");
             int B = scanner.nextInt();
+
+            // Stop user from inputting integers outside the bounds.
+            if (A <= 0 || B <= 0) {
+                System.out.println("Both inputs must be positive.");
+                menu();
+            } else if (A > 44 || B > 44) {
+                System.out.println("Both inputs must not be more than 44.");
+                menu();
+            }
             
             System.out.println("");
             gcdFibonacci(A, B);
@@ -156,6 +177,12 @@ public class Main {
 
     public static void main(String[] args) {
         menu();
+
+        // Testing the fibonacci method.
+        // for (int n = 0; n < 50; ++n) {
+        //     System.out.println(n + " " + fibonacci(n));
+        // }
+        
 
     }
 }
