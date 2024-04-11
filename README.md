@@ -13,11 +13,15 @@ The following constraints must be adhered to:
 ## To compile and run
 
 In the terminal, enter the following to compile the java code and create the jar file:
+```
     javac Main.java
     jar cvfe FibonacciSumGCD.jar Main *.class
+```
 
 This has already been done with the current Main.java code. To run the jar, double-click in the file manager. If that does not work, it can be run from the terminal with:
+```
     java -jar FibonacciSumGCD.jar
+```
 
 ## Calculating the nth Fibonacci number
 
