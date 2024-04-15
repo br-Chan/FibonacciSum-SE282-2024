@@ -127,6 +127,47 @@ GCD(20, 20) = ? (using Euclidean Algorithm)
 20
 ```
 
--- end of output --
-
 Each test case matches the pre-calculated values. Not that the 2nd test case (20 & 30) was not manually calculated and was found using the explicit formulae, and this test case is instead testing the program has used the algorithm correctly.
+
+To test the bounds of the program, the following commands were manually inputted in the menu:
+
+```
+Input 'TEST' to run a testProgram method with predefined inputs.
+Input 'USER' to enter your own inputs.
+Input 'EXIT' to exit.
+USER
+Input A = -5
+Input must be between 1 and 44.
+Input A = 50
+Input must be between 1 and 44.
+Input A = 5 
+Input B = 0
+Input must be between 1 and 44.
+Input B = 45
+Input must be between 1 and 44.
+Input B = 10
+```
+After the last command, the program ran as expected. When values less than 1 or more than 44 are inputted, an error message is printed and the user must input the value again.
+
+To test the handling of invalid inputs, the following commands were manually inputted in the menu:
+
+```
+Input 'TEST' to run a testProgram method with predefined inputs.
+Input 'USER' to enter your own inputs.
+Input 'EXIT' to exit.
+USER
+Input A = String
+Input must be an integer.
+Input A = $45   
+Input must be an integer.
+Input A = w0rds$ndNumber222
+Input must be an integer.
+Input A = (5)
+Input must be an integer.
+Input A = 5.50
+Input must be an integer.
+Input A = 13
+Input B = 12
+```
+After the last command, the program ran as expected. When an integer is not inputted, an error message is printed and the user must input the value again.
+

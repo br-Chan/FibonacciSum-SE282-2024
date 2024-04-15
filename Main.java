@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // Author: Brandon Seng Han Chan
@@ -146,19 +147,45 @@ public class Main {
 
         } else if (input.toUpperCase().equals("USER")) {
             // Prompt user for inputs.
-            System.out.print("Input A = ");
-            int A = scanner.nextInt();
-            System.out.print("Input B = ");
-            int B = scanner.nextInt();
+            boolean aValid = false, bValid = false;
+            int A = 0, B = 0;
+            while (!aValid) {
+                try {
+                    System.out.print("Input A = ");
+                    A = scanner.nextInt();
 
-            // Stop user from inputting integers outside the bounds.
-            if (A <= 0 || B <= 0) {
-                System.out.println("Both inputs must be positive.");
-                menu();
-            } else if (A > 44 || B > 44) {
-                System.out.println("Both inputs must not be more than 44.");
-                menu();
-            }
+                    if (A <= 0 || A > 44) {
+                        System.err.println("Input must be between 1 and 44.");
+                        continue;
+                    }
+
+                    aValid = true;
+                }
+                catch (InputMismatchException e) {
+                    System.err.println("Input must be an integer.");
+                    scanner.next();
+                    continue;
+                }
+            }           
+
+            while (!bValid) {
+                try {
+                    System.out.print("Input B = ");
+                    B = scanner.nextInt();
+
+                    if (B <= 0 || B > 44) {
+                        System.err.println("Input must be between 1 and 44.");
+                        continue;
+                    }
+
+                    bValid = true;
+                }
+                catch (InputMismatchException e) {
+                    System.err.println("Input must be an integer.");
+                    scanner.next();
+                    continue;
+                }
+            }  
             
             System.out.println("");
             gcdFibonacci(A, B);
