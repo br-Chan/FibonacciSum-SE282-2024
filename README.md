@@ -127,7 +127,7 @@ GCD(20, 20) = ? (using Euclidean Algorithm)
 20
 ```
 
-Each test case matches the pre-calculated values. Not that the 2nd test case (20 & 30) was not manually calculated and was found using the explicit formulae, and this test case is instead testing the program has used the algorithm correctly.
+Each test case matches the pre-calculated values. Note that the 2nd test case (20 & 30) was not manually calculated and was found using the explicit formulae, and this test case is instead testing the program has used the algorithm correctly.
 
 To test the bounds of the program, the following commands were manually inputted in the menu:
 
